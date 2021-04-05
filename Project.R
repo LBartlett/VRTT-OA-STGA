@@ -34,3 +34,25 @@ anova(Model1, test = 'F')
 boxplot(UGAdata.2020$DeltaPMI ~ UGAdata.2020$TreatmentCode)
 boxplot(UGAdata.2020$DeltaPMI ~ UGAdata.2020$OxalicDose)
 boxplot(UGAdata.2020$DeltaPMI ~ UGAdata.2020$GlycerinTowel)
+
+Model2 <- glm(
+  DeltaPMI ~ Yard + OxalicDose - 1,
+  family = 'gaussian',
+  data = UGAdata.2020
+)
+anova(Model2, test = 'F')
+summary(Model2)
+hist(resid(Model2))
+qqnorm(resid(Model2))
+qqline(resid(Model2), col = "blue1", lwd = 2)
+
+library(afex)
+
+FullMiteMod <- mixed(DeltaPMI ~ OxalicDose + (1|Yard),
+                     data = UGAdata.2020)
+
+nice(FullMiteMod)
+
+MirrorMod <- lmer(DeltaPMI ~ OxalicDose + (1|Yard),
+                  data = UGAdata.2020)
+summary(MirrorMod)

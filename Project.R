@@ -127,3 +127,4 @@ qqnorm(resid(GlycerinModel))
 qqline(resid(GlycerinModel), col = "blue1", lwd = 2)
 
 # Results are kinda interesting, p value was .3074 but I'm not sure if I did it correctly
+

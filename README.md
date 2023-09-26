@@ -1,6 +1,8 @@
 # VRTT-OA-STGA
 Repo for UGA Oxalic Acid collaborative trials on shop towels. Work w/ Ethan Hackmeyer, Jennifer Berry, Geoff Williams, Selina Bruckner
 
+Manyscript accepted as Bartlett et al. 2023 in Journal of Insect Science
+
 Analysis completed in R
 
 Explanation for data set:
